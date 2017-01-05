@@ -13,6 +13,7 @@
 <div class="panel panel-default">
     <div class="panel-body">
         <form>
+
             <input type="hidden" id="_token" name="_token" value="<?php echo csrf_token();?>">
             <div class="form-group">
                 <label for="productName">Product Name</label>
@@ -32,7 +33,7 @@
             </div>
 
             <div class="btn btn-default" id="submit">Submit</div>
-            <div class="server-error errorContainer"></div>
+            <div class="server-error errorContainer text-danger"></div>
         </form>
     </div>
 </div>
@@ -41,38 +42,30 @@
 <!-- output container -->
 <div class="panel panel-default">
     <div class="panel-body">
-
-        <!-- product name -->
-        <div class="row">
-            <div class="col-lg-3">
-                <p>Product Name</p>
-            </div>
-            <div class="col-lg-6">  
-                <p>output</p>
-            </div>
-        </div>
-
-        <!-- quantity in stock -->
-        <div class="row">
-            
-            <div class="col-lg-3">
-                <p>Quantity In Stock</p>
-            </div>
-            <div class="col-lg-6">
-                <p>output</p>
-            </div>
-        </div>
-
-        <!-- pric per item -->
-        <div class="row">
-            
-            <div class="col-lg-3">
-                <p>Price Per Item </p>
-            </div>
-            <div class="col-lg-6">
-                <p>output</p>
-            </div>
-        </div>
+        <table class="table table-hover">
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity in stock</th> 
+                <th>Price Per Item</th>
+                <th>Date Time Submitted</th>
+                <th>Total Value Number</th>
+            </tr>
+            <div class="rowHolder"></div>
+            <tr>
+                <td>Jill</td>
+                <td>Smith</td> 
+                <td>50</td>
+                <td>50</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td>Eve</td>
+                <td>Jackson</td> 
+                <td>94</td>
+                <td>50</td>
+                <td>50</td>
+            </tr>
+        </table>
 
     </div>
 </div><!-- ./ end output contaier -->

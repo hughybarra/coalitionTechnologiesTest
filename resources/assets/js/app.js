@@ -7,6 +7,8 @@ $(document).ready(function(){
 	$('input[name=productName').focus();
 
 
+
+
 	$('#submit').click(function(e){
 		console.log('cliced');
 
@@ -88,24 +90,22 @@ $(document).ready(function(){
 				 'price_per_item': pricePerItem 
 			};
 
-			var payload = JSON.stringify(data);
-			// send message to server 
-			console.log(payload);
+
 			$.ajax({
 				type: 'POST', 
 				url: '/product',
-				data: payload, 
-				dataType: 'Json', 
+				data: data, 
+				dataType: 'JSON', 
 				success: function(response){
 					console.log('success');
-					cosnole.log(response);
+					console.log(response);
 					// check for status code
 					if(response.status === 200){
 						// success redirect
 						window.location.href = response.data.redirect;
 					}else{
 						console.log('error');
-						cosnole.log(response);
+						console.log(response);
 						// Reset form display error
 						$('.server-error').text(response.data.errors);
 					}
@@ -133,6 +133,26 @@ $(document).ready(function(){
 	* Grabs the input fields and displays them in the bottom panel 
 	*/
 	var displayOutput = function(){
+		$.ajaxSetup({
+			headers: {
+				'X-CSRF-TOKEN': $('#_token').val()
+			}
+		});
+
+		$.ajax({
+			type: 'GET', 
+			url: '/products',
+			success: function(response){
+				console.log('ran');
+				console.log(response);
+				// parse response
+				var data = JSON.parse(response);
+				console.log(data);
+
+			}, 
+		});
 
 	};// end display output 
+
+	displayOutput();
 });// close doc ready

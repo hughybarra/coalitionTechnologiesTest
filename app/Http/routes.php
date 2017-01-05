@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::post('/product', 'ProductsController@create');
+Route::get('/products', 'ProductsController@list');
