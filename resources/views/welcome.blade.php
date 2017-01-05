@@ -50,7 +50,9 @@
                 <th>Date Time Submitted</th>
                 <th>Total Value Number</th>
             </tr>
-            <div class="rowHolder"></div>
+            <div class="rowHolder">
+                
+            </div>
             <tr>
                 <td>Jill</td>
                 <td>Smith</td> 

@@ -22,7 +22,10 @@ class ProductsController extends Controller
 	{
 		$products = DB::table('products')->get();
 		Log::info(var_dump($products));
-		return json_encode($products);
+		// return json_encode($products);
+		// return $products;
+
+		return response()->json($products);
 	}
     /*
    	* Create 

@@ -147,7 +147,9 @@ $(document).ready(function(){
 				console.log(response);
 				// parse response
 				var data = JSON.parse(response);
+				// console.log(data);
 				console.log(data);
+
 
 			}, 
 		});
